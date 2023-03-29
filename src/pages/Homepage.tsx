@@ -28,7 +28,7 @@ function Homepage() {
                 <Play className="w-7 h-7" />
               </button>
 
-              <div className="font-bold text-white text-3xl">Hindi Music</div>
+              <div className="font-bold text-white text-3xl">World Top</div>
             </div>
 
             <button className="px-5 py-3 rounded-full border font-bold text-white tracking-widest">
@@ -47,7 +47,7 @@ function Homepage() {
           </div>
           <div className="space-y-3">
             <p className="font-medium text-white">Public Playlist</p>
-            <h1 className="text-7xl font-extrabold text-white">Hindi Music</h1>
+            <h1 className="text-7xl font-extrabold text-white">World Chart</h1>
             <p className="text-white font-medium">no. 28 songs, 1hr 49 min</p>
           </div>
         </div>

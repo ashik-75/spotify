@@ -1,16 +1,22 @@
 import { Outlet } from "react-router-dom";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import RightBar from "../components/RightBar";
+import Sidebar from "../components/Sidebar";
 
 function RootLayout() {
   return (
-    <>
-      <Header />
-      <main className="min-h-[calc(100vh-144px)]">
+    <div className="grid grid-cols-12 h-[100vh]">
+      <aside className="hidden md:block col-span-2 bg-black">
+        <Sidebar />
+      </aside>
+      <main className="col-span-8 ">
         <Outlet />
       </main>
-      <Footer />
-    </>
+      <aside className="col-span-2 bg-black">
+        <RightBar />
+      </aside>
+
+      {/* <VideoPlayer /> */}
+    </div>
   );
 }
 

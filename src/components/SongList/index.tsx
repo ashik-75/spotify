@@ -15,7 +15,7 @@ function SongList({ songs }: any) {
       </thead>
 
       <tbody>
-        {songs.map((song, index) => (
+        {songs?.map((song: any, index: number) => (
           <tr className="hover:bg-zinc-800 cursor-pointer my-10" key={song.key}>
             <td className="flex gap-5 items-center p-4">
               <span className="font-medium">{index + 1}</span>

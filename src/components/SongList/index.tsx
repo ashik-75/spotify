@@ -6,9 +6,9 @@ function SongList({ songs }: any) {
       <thead className="border-b border-b-gray-800">
         <tr className="  text-left uppercase tracking-widest">
           <th className="p-2 text-xs"># title</th>
-          <th className="p-2 text-xs">Album</th>
-          <th className="p-2 text-xs">Date Added</th>
-          <th className="p-2">
+          <th className="p-2 text-xs hidden">Album</th>
+          <th className="p-2 text-xs hidden">Date Added</th>
+          <th className="p-2 hidden">
             <Clock className="w-5 h-5" />
           </th>
         </tr>
@@ -31,11 +31,11 @@ function SongList({ songs }: any) {
                 </p>
               </div>
             </td>
-            <td className="p-4 text-sm font-medium">{song?.subtitle}</td>
-            <td className="p-4 text-sm font-medium">
+            <td className="p-4 text-sm font-medium hidden">{song?.subtitle}</td>
+            <td className="p-4 text-sm font-medium hidden">
               {song?.date || "Dec 11,2022"}
             </td>
-            <td className="p-4 text-sm font-medium">
+            <td className="p-4 text-sm font-medium hidden">
               {song?.duration || "6:33"}
             </td>
           </tr>

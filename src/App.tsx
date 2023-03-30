@@ -5,19 +5,21 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
-import Analytics from "./pages/Analytics";
+import AroundYou from "./pages/AroundYou";
 import Homepage from "./pages/Homepage";
-import Payment from "./pages/Payment";
-import Resources from "./pages/Resources";
+import SearchTerm from "./pages/SearchTerm";
+import TopArtistsPage from "./pages/TopArtistsPage";
+import TopChart from "./pages/TopChart";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Homepage />} />
-        <Route path="/analytics" element={<Analytics />} />
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/resources" element={<Resources />} />
+        <Route path="/around-you" element={<AroundYou />} />
+        <Route path="/top-chart" element={<TopChart />} />
+        <Route path="/top-artists" element={<TopArtistsPage />} />
+        <Route path="/search/:searchTerm" element={<SearchTerm />} />
       </Route>
     )
   );

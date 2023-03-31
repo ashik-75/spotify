@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 function ArtistList({ songs }: any) {
   return (
     <div className="grid-cols-6 gap-5 grid">
@@ -14,11 +12,9 @@ function ArtistList({ songs }: any) {
           </div>
 
           <div>
-            <Link to={`/artists/${song?.artists?.[0]?.adamid}`}>
-              <h1 className="font-bold text-gray-400 hover:text-white">
-                {song?.subtitle}
-              </h1>
-            </Link>
+            <h1 className="font-bold text-gray-400 hover:text-white">
+              {song?.subtitle}
+            </h1>
           </div>
         </div>
       ))}

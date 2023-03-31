@@ -8,7 +8,7 @@ function RootLayout() {
       <aside className="hidden md:block md:col-span-2 bg-black">
         <Sidebar />
       </aside>
-      <main className="col-span-8 bg-zinc-900 ">
+      <main className="col-span-8 bg-zinc-900 h-[100vh] overflow-y-scroll scrollbar-hide ">
         <Outlet />
       </main>
       <aside className="hidden md:block md:col-span-2 bg-black">

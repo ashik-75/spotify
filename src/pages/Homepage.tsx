@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router-dom";
 import Banner from "../components/Banner";
+import SongListSkeleton from "../components/Skeleton/SongListSkeleton";
 import SongList from "../components/SongList";
 import { getData } from "../services/shazam";
 
@@ -13,15 +14,17 @@ function Homepage() {
   });
 
   return (
-    <div className="bg-zinc-900 h-[100vh] overflow-y-scroll scrollbar-hide">
+    <div>
       <Banner />
-      {isLoading ? (
-        <div>Loading ...</div>
-      ) : isError ? (
-        <div>Error</div>
-      ) : (
-        <SongList songs={data} />
-      )}
+      <div className="p-5">
+        {isLoading ? (
+          <SongListSkeleton />
+        ) : isError ? (
+          <div>Error</div>
+        ) : (
+          <SongList songs={data} />
+        )}
+      </div>
     </div>
   );
 }

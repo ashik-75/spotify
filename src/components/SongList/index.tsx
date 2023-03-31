@@ -1,6 +1,7 @@
 import { Clock } from "lucide-react";
 
 function SongList({ songs }: any) {
+  console.log(songs);
   return (
     <table className="text-gray-300 w-full font-mont ">
       <thead className="border-b border-b-gray-800">
@@ -26,9 +27,7 @@ function SongList({ songs }: any) {
               />
               <div className="font-medium text-sm">
                 <p>{song.title}</p>
-                <p className="text-sm text-gray-400">
-                  {song?.artists?.[0]?.alias}
-                </p>
+                <p className="text-sm text-gray-400">{song?.subtitle}</p>
               </div>
             </td>
             <td className="p-4 text-sm font-medium hidden">{song?.subtitle}</td>

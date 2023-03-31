@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import SongListSkeleton from "../components/Skeleton/SongListSkeleton";
 import SongList from "../components/SongList";
 import { getData } from "../services/shazam";
 
@@ -12,9 +13,9 @@ function TopChart() {
     queryFn: () => getData("charts/world"),
   });
   return (
-    <div>
+    <div className="p-5">
       {isLoading ? (
-        <div>Loading ...</div>
+        <SongListSkeleton />
       ) : isError ? (
         <div>Error</div>
       ) : (

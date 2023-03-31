@@ -30,6 +30,7 @@ function Banner() {
   const [searchParams] = useSearchParams();
   const shouldSearchBarOpen = searchParams.get("q") === "search";
   const [searchInfo, setSearchInfo] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -64,7 +65,7 @@ function Banner() {
                 </button>
 
                 <div className="font-bold text-white md:text-3xl">
-                  World Top
+                  {selectedCategory.split("_").join(" ") || "POP"}
                 </div>
               </div>
             )}
@@ -74,9 +75,10 @@ function Banner() {
             <select
               onChange={(e) => {
                 navigate(`?genre=${e.target.value}`);
+                setSelectedCategory(e.target.value);
               }}
               id="countries"
-              className="border bg-transparent border-gray-300  text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
               <option selected>Choose a country</option>
               {genres.map((genre) => (
@@ -98,7 +100,7 @@ function Banner() {
         <div className="space-y-3">
           <p className="font-medium text-white">Public Playlist</p>
           <h1 className="md:text-7xl text-3xl font-extrabold text-white">
-            World Chart
+            {selectedCategory.split("_").join(" ") || "POP"}
           </h1>
           <p className="text-white font-medium">no. 28 songs, 1hr 49 min</p>
         </div>

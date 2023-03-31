@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
+import SongListSkeleton from "../components/Skeleton/SongListSkeleton";
 import SongList from "../components/SongList";
 import { getData } from "../services/shazam";
 
@@ -19,7 +20,7 @@ function SearchTerm() {
 
       <div>
         {isLoading ? (
-          <div>Loading ...</div>
+          <SongListSkeleton />
         ) : isError ? (
           <div>Error</div>
         ) : (

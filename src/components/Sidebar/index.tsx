@@ -52,7 +52,10 @@ function Sidebar() {
       {/* albums */}
       <div className="space-y-3">
         {albums.map((album) => (
-          <div className="capitalize hover:text-white cursor-pointer text-sm font-bold">
+          <div
+            key={album.id}
+            className="capitalize hover:text-white cursor-pointer text-sm font-bold"
+          >
             <Link key={album.id} to={album.to}>
               {album.title}
             </Link>

@@ -64,7 +64,7 @@ function Banner() {
                   <Play className="w-7 h-7" />
                 </button>
 
-                <div className="font-bold text-white md:text-3xl">
+                <div className="font-bold text-white md:text-2xl">
                   {selectedCategory.split("_").join(" ") || "POP"}
                 </div>
               </div>
@@ -78,11 +78,12 @@ function Banner() {
                 setSelectedCategory(e.target.value);
               }}
               id="countries"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-sky-900 outline-none text-sm block w-full p-2.5 text-white"
             >
-              <option selected>Choose a country</option>
               {genres.map((genre) => (
-                <option value={genre.value}>{genre.label}</option>
+                <option value={genre.value} selected={genre.value === "POP"}>
+                  {genre.label}
+                </option>
               ))}
             </select>
           </div>
